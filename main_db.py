@@ -85,3 +85,9 @@ conn.executemany(
 )
 
 print("INSERT service")    
+
+
+
+print(f"Current number {} ")
+
+previousNumber = 0
