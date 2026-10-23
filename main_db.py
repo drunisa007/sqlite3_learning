@@ -1,7 +1,7 @@
 import sqlite3
 
 conn = sqlite3.connect("car_database.db")
-
+conn.execute("PRAGMA foreign_keys = ON")
 
 ownerSchema = """
     CREATE TABLE IF NOT EXISTS owners(
@@ -88,6 +88,19 @@ print("INSERT service")
 
 
 
-print(f"Current number {} ")
+conn.execute("""
+ SELECT
+        o.name AS owner_name,
+        c.brand,
+        c.model,
+        c.plate_number,
+        s.service_type,
+        s.costs
+    FROM owners AS o
+    INNER JOIN cars AS c
+        ON c.owner_id = o.owner_id
+    INNER JOIN services AS s
+        ON s.car_id = c.car_id
+    ORDER BY o.owner_id, c.car_id, s.service_id
 
-previousNumber = 0
+""")

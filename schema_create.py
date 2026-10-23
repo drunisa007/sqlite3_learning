@@ -3,7 +3,7 @@ import sqlite3
 
 def createSchema():
     conn = sqlite3.connect("car_database.db")
-
+    
     ownerSchema = """
         CREATE TABLE IF NOT EXISTS owners(
         owner_id INTEGER PRIMARY KEY,
