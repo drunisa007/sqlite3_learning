@@ -1,0 +1,27 @@
+1. Customers
+Column	Data Type	Key
+customer_id	INTEGER	Primary Key
+name	TEXT	
+phone	TEXT	
+address	TEXT	
+2. Menu Items
+Column	Data Type	Key
+item_id	INTEGER	Primary Key
+name	TEXT	
+category	TEXT	
+price	REAL	
+is_available	INTEGER	
+3. Orders
+Column	Data Type	Key
+order_id	INTEGER	Primary Key
+customer_id	INTEGER	Foreign Key
+table_number	INTEGER	
+order_date	TEXT	
+status	TEXT	
+4. Order Items
+Column	Data Type	Key
+order_item_id	INTEGER	Primary Key
+order_id	INTEGER	Foreign Key
+item_id	INTEGER	Foreign Key
+quantity	INTEGER	
+unit_price	REAL
